@@ -218,6 +218,24 @@ is_expired
 (8,3,'2023-09-12',NULL,FALSE);
 
 
+-- ========================================
+-- BONUS: Automatically mark certifications
+-- as expired if expiration_date has passed
+-- ========================================
 
+CREATE OR REPLACE FUNCTION check_certification_expiration()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.expiration_date IS NOT NULL AND NEW.expiration_date < CURRENT_DATE THEN
+        NEW.is_expired := TRUE;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER certification_expiration_trigger
+BEFORE INSERT OR UPDATE ON warden_certifications
+FOR EACH ROW
+EXECUTE FUNCTION check_certification_expiration();
 
 
