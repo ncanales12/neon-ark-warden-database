@@ -9,31 +9,36 @@ This project designs a relational database for the Neon Ark Admin Warden onboard
 
 The assignment required:
 
-- Designing an Entity Relationship Diagram (ERD)
-- Implementing the database structure in SQL
-- Enforcing data consistency using constraints
-- Providing sample data for testing
+* Designing an Entity Relationship Diagram (ERD)
+* Implementing the database structure in SQL
+* Enforcing data consistency using constraints
+* Providing sample data for testing
+
+* Bonus PostgreSQL feature: a trigger automatically marks certifications as expired when the expiration date is in the past.
+
+
 
 ## Files
 
-neon_ark_erd.png  
+neon\_ark\_erd.png  
 ERD diagram showing table relationships and normalization.
 
-neon_ark_wardens.sql  
+neon\_ark\_wardens.sql  
 SQL script that:
 
-- Drops existing tables
-- Recreates the schema
-- Applies constraints
-- Inserts sample data (10+ wardens)
+* Drops existing tables
+* Recreates the schema
+* Applies constraints
+* Inserts sample data (10+ wardens)
 
 The SQL script runs from start to finish without errors.
 
 ## Database Concepts Demonstrated
 
-- Primary Keys
-- Foreign Keys
-- Unique Constraints
-- Lookup Tables
-- Many-to-Many Relationships
-- Normalization
+* Primary Keys
+* Foreign Keys
+* Unique Constraints
+* Lookup Tables
+* Many-to-Many Relationships
+* Normalization
+
